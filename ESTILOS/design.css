@@ -1,0 +1,38 @@
+
+.titulop{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top:50px;
+
+}
+.imagen-artista {
+    max-width:200px; /* Puedes ajustar el valor según tus necesidades */
+    height: auto; /* Esto garantiza que la proporción de la imagen se mantenga */
+    display: block; /* Elimina el espacio adicional debajo de la imagen */
+    margin-bottom: 10px; /* Ajusta el margen inferior según tus necesidades */
+}
+
+.evento {
+    display: inline-block;
+    width: 350px; /* Ajusta el ancho según tus necesidades */
+    margin: 0 10px 20px 0; /* Ajusta los márgenes según tus necesidades */
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar */
+}
+
+.imagen-artista {
+    max-width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    height: auto;
+}
+.evento {
+    transition: transform 0.3s; /* Agrega una transición suave */
+}
+
+.evento:hover {
+    transform: scale(1.1); /* Aplica un efecto de zoom al pasar el cursor */
+    cursor: pointer;
+}
+
