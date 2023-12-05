@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Reserva de Asientos</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="ESTILOS/reservacion.css">
+    
+</head>
+
+<body>
+
+    <button onclick="window.location.href='INDEX1.html';">Ir a Inicio</button>
+
+    <h2>Reservacion</h2>
+    <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <br><label for="nombre">Apellido Paterno:</label>
+        <input type="text" id="apellidopaterno" name="pellidopaterno" required><br>
+
+        <br><label for="nombre">Apellido Materno:</label>
+        <input type="text" id="apellidomaterno" name="pellidomaterno" required><br>
+
+        <br><label for="nombre">Correo Electronico:</label>
+        <input type="email" id="correo" name="correo" required><br>
+
+        <br><label for="asiento">Asiento:</label>
+        <input type="text" id="asiento" name="asiento" required><br>
+
+        <!-- Agrega más campos según sea necesario -->
+
+        <br><input type="submit" value="Reservar">
+    </form>
+    <h2>Reservacion de asientos</h2>
+    <!-- Croquis de asientos -->
+    <div class="croquis">
+        <!-- Aquí podrías generar dinámicamente los asientos según tus necesidades -->
+        <div class="asiento" onclick="reservarAsiento(this)">A1</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A2</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A3</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A4</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A5</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A6</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A7</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A8</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A9</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A10</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A11</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A12</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A13</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A14</div>
+        <div class="asiento" onclick="reservarAsiento(this)">A15</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B16</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B17</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B18</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B19</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B20</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B21</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B22</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B23</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B24</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B25</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B26</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B27</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B28</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B29</div>
+        <div class="asiento" onclick="reservarAsiento(this)">B30</div>
+        <!-- Agrega más asientos según sea necesario -->
+    </div>
+    <script>
+        function reservarAsiento(asiento) {
+            // Simplemente cambia la clase para marcar el asiento como reservado
+            asiento.classList.toggle('reservado');
+            // Actualiza el valor del campo de número de asiento en el formulario
+            document.getElementById('asiento').value = asiento.textContent;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ortega-Validar formulario</title>
+    <link rel="stylesheet" href="Login.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"/>
+      <!-- Agrega las bibliotecas de Firebase y jQuery si no las has incluido aún -->
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      <div class="form-container register-container">
+        <form>
+          <h1>Ir a la página</h1>
+          <div class="form-control">
+          
+          </div>
+          <a  class="btn" href="Index.html" type="submit" value="submit">Iniciar</a>
+          <div class="social-container">
+          
+          </div>
+        </form>
+      </div>
+
+      <div class="form-container login-container">
+        <form class="form-lg">
+          <h1>Inicia sesión con facebook</h1>
+       
+          <div class="content">
+            <div class="checkbox">
+            </div>
+            <div class="pass-link">
+          
+            </div>
+          </div>
+          <button id="facebook-login-btn">Iniciar</button>
+          <div class="social-container">
+            <a href="#" class="social"
+              ><i class="fa-brands fa-facebook-f"></i
+            ></a>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1 class="title">
+              Hola <br />
+              amigos
+            </h1>
+            <p>Si tienes una cuenta de Facebook, inicia sesión aquí y diviértete con los mejores conciertos que ofrece LuminaryTickets</p>
+            <button class="ghost" id="login">
+              Iniciar sesión
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+          </div>
+
+          <div class="overlay-panel overlay-right">
+            <h1 class="title">
+              Comienza tu <br />
+              viaje ahora
+            </h1>
+            <p>
+              Si aún no tienes una cuenta, únete a nosotros y comienza tu viaje a los mejores conciertos que ofrecemos
+            </p>
+            <button class="ghost" id="register">
+              Invitado
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script src="Login.js"></script>
+</html>
+
+
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+  import {getAuth, signInWithPopup, FacebookAuthProvider } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+   // import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-database.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyA_jqdtKUpkcoYpbARKtiOVtJrUf-io2oY",
+  authDomain: "kande-ba7ce.firebaseapp.com",
+  projectId: "kande-ba7ce",
+  storageBucket: "kande-ba7ce.appspot.com",
+  messagingSenderId: "740829418011",
+  appId: "1:740829418011:web:45afc7d97d99f422821ebe",
+  measurementId: "G-EP9VK0WRQW"
+};
+
+  // Initialize Firebase
+  const firebase = initializeApp(firebaseConfig);
+  const provider = new FacebookAuthProvider();
+      document.getElementById('facebook-login-btn').addEventListener('click', () => {
+      
+const auth = getAuth();
+  signInWithPopup(auth, provider)
+    .then((result) => {
+   // const user = result.user;
+    window.location.href = "kande.html";
+    console.log("Conexión exitosa");
+  })
+  .catch((error) => {
+    if (error.code === "auth/popup-closed-by-user") {
+        console.log("El usuario cerró la ventana emergente de inicio de sesión.");
+        // Puedes mostrar un mensaje al usuario para informar que el proceso de inicio de sesión se canceló.
+    } else {
+        console.log("Ocurrió un error durante la autenticación.");
+        console.error(error);
+        // Manejar otros errores aquí.
+    }
+    
+
+      });
+      });
+    </script>
+  </body>
+</html>
